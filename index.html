@@ -11,6 +11,7 @@
     <script src="script.js" type="text/javascript" defer></script>
 </head>
 <body>
+
     <div id="content">
 
         <header>
@@ -19,25 +20,52 @@
 
         <div id="game">
 
-                <div id="playerChoices">
-
-                    <div class="choices" id="rock">
-                        <img src="./images/rock.png">
-                        <p>Rock</p>
-                    </div>
-                    <div class="choices" id="paper">
-                        <img src="./images/paper.png">
-                        <p>Paper</p>
-                    </div>
-                    <div class="choices" id="scissors">
-                        <img src="./images/scissors.png">
-                        <p>Scissors</p>
+            <div id="information">
+                <div id="scores">
+                    <div id="playerScore">
+                        <p>Your score is: <span id="playerScoreText"></span></p>
                     </div>
 
+                    <div id="computerScore">
+                        <p>Computer's score is: <span id="computerScoreText"></span></p>
+                    </div>
                 </div>
+                <div>
+                    <h2 id="message"></h2>
+                </div>
+            </div>
+
+            <div id="choicesSelected">
+                <div class="choiceSelected">
+                    <p>Your choice</p>
+                    <img id="humanChoiceImg">
+                </div>
+                <div class="choiceSelected">
+                    <p>Computer's choice</p>
+                    <img id="computerChoiceImg">
+                </div>
+            </div>
+    
+            <div id="playerChoices">
+
+                <div class="choices" id="rock">
+                    <img src="./images/rock.png">
+                    <p>Rock</p>
+                </div>
+                <div class="choices" id="paper">
+                    <img src="./images/paper.png">
+                    <p>Paper</p>
+                </div>
+                <div class="choices" id="scissors">
+                    <img src="./images/scissors.png">
+                    <p>Scissors</p>
+                </div>
+
+            </div>
 
         </div>
 
     </div>
+
 </body>
 </html>

@@ -1,3 +1,5 @@
+/*-------------------------------- GENERAL STYLES --------------------------------*/
+
 *{
     margin: 0px;
     padding: 0px;
@@ -13,6 +15,7 @@ body{
     align-items: center;
 }
 
+/*-------------------------------- HEADER STYLES --------------------------------*/
 
 header{
     margin-top: 45px;
@@ -20,27 +23,119 @@ header{
 
 h1{
     font-family: "Jersey 10", sans-serif;
-    font-size: 5em;
+    font-size: 5vw;
     font-weight: 400;
+    margin-bottom: 40px;
     color: whitesmoke;
+    text-align: center;
 }
+
+/*-------------------------------- GENERAL BODY STYLES --------------------------------*/
 
 #game{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+/*-------------------------------- GENERAL INFORMATION SECTION STYLES --------------------------------*/
+
+#information{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    align-items: center;
+    background-color: #242e3d71;
+    width: 80%;
+}
+
+/*-------------------------------- SCORES SECTION STYLES --------------------------------*/
+
+#scores{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#scores p{
+    font-size: 3.5vw;
+}
+
+#playerChoices p{
+    font-size: 1.5vw;
+}
+
+#message{
+    font-size: 3vw;
+}
+
+/*-------------------------------- FONT STYLES --------------------------------*/
+
+#scores p, #playerChoices p, #message, #choicesSelected p{
+    font-family: "Jersey 10", sans-serif;
+    color: whitesmoke;
+}
+
+/*-------------------------------- CHOICES SELECTED SECTION STYLES --------------------------------*/
+
+#choicesSelected{
+    display: flex;
+    width: 80%;
+    padding: 1vw;
+    justify-content: space-around;
+    margin-top: 30px;
+    background-color: #242e3d71;
+}
+
+.choiceSelected{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.choiceSelected img{
+    background-color: white;
+    width: 25%;
+    border-radius: 20px;
+}
+
+.choiceSelected p{
+    font-size: 1vw;
+    margin-bottom: 20px;
+}
+
+/*-------------------------------- CHOICES SECTION STYLES --------------------------------*/
 
 #playerChoices{
     display: flex;
-    width: 60%;
+    margin-top: 30px;
+    background-color: #242e3d71;
+    padding: 2vw;
+    width: 80%;
 }
 
+.choices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .choices img{
     background-color: white;
     width: 50%;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .choices img:hover{
     cursor: pointer;
+}
+
+.choices p{
+    text-align: center;
+    font-family: "Jersey 10", sans-serif;
+    color: whitesmoke;
+    margin-top: 10px;
 }
