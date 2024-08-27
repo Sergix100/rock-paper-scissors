@@ -4,6 +4,8 @@ function getComputerChoice(){
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+/**
+ 
 function getHumanChoice(){
 
     let humanChoice = prompt("Pick between rock, paper or scissors");
@@ -27,8 +29,12 @@ function getHumanChoice(){
     }
 }
 
-function playRound(humanChoice, computerChoice){
+**/
 
+function playRound(){
+
+    let humanChoice = this.id;
+    let computerChoice = getComputerChoice();
     console.log("Your choice is " + humanChoice);
     console.log("Computer's choice is " + computerChoice);
 
@@ -63,20 +69,13 @@ function playRound(humanChoice, computerChoice){
 }
 
 
-function playGame(){
-
-
-    for (let i = 0; i < 5; i++) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        console.log("Human score = " + humanScore);
-        console.log("Computer score = " + computerScore);
-      }
-
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
-playGame();
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+scissors.addEventListener("click", playRound);

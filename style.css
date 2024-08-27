@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: url(./images/background.png);
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header{
+    margin-top: 45px;
+}
+
+h1{
+    font-family: "Jersey 10", sans-serif;
+    font-size: 5em;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+#game{
+    display: flex;
+    justify-content: center;
+}
+
+#playerChoices{
+    display: flex;
+    width: 60%;
+}
+
+.choices img{
+    background-color: white;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.choices img:hover{
+    cursor: pointer;
+}
