@@ -2,24 +2,21 @@ function getComputerChoice(){
 
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
-    
+
 }
 
-function getWinner(humanChoice, computerChoice){
+function getRoundWinner(humanChoice, computerChoice){
 
     if (humanChoice === "paper" && computerChoice === "scissors"){
         informationText.textContent = "You lose! Scissors beats Paper";
-        console.log("You lose! Scissors beats Paper");
         computerScore++;
     }
     else if (humanChoice === "rock" && computerChoice === "paper"){
         informationText.textContent = "You lose! Paper beats Rock";
-        console.log("You lose! Paper beats Rock");
         computerScore++;
     }
     else if (humanChoice === "scissors" && computerChoice === "rock"){
         informationText.textContent = "You lose! Rock beats Scissors";
-        console.log("You lose! Rock beats Scissors");
         computerScore++;
     }
     else if (humanChoice === "paper" && computerChoice === "rock"){
@@ -29,17 +26,14 @@ function getWinner(humanChoice, computerChoice){
     }
     else if (humanChoice === "scissors" && computerChoice === "paper"){
         informationText.textContent = "You win! Scissors beats Paper";
-        console.log("You win! Scissors beats Paper");
         humanScore++;
     }
     else if (humanChoice === "rock" && computerChoice === "scissors"){
         informationText.textContent = "You win! Rock beats Scissors";
-        console.log("You win! Rock beats Scissors");
         humanScore++;
     }
     else if (humanChoice === computerChoice){
         informationText.textContent = "No one wins! Both players picked the same answer";
-        console.log("No one wins! Both players picked the same answer");
     }
 
 }
@@ -76,17 +70,45 @@ function showChoices(humanChoice, computerChoice){
 
 }
 
+function gameOver(humanScore, computerScore){
+
+    modal.showModal();
+    if(humanScore === 5){
+        modalText.textContent = "You won! Congratulations!"
+    }
+    else{
+        modalText.textContent = "Computer won! Better luck next time!"
+    }
+
+}
+
+function resetGame(){
+    humanScore = 0;
+    computerScore = 0;
+    humanScoreParagraph.textContent = humanScore;
+    computerScoreParagraph.textContent = computerScore;
+    informationText.textContent = '';
+    computerChoiceImg.src = '';
+    humanChoiceImg.src = '';
+    modal.close();
+
+}
+
 function playRound(){
 
     let humanChoice = this.id;
     let computerChoice = getComputerChoice();
 
-    getWinner(humanChoice, computerChoice);
+    getRoundWinner(humanChoice, computerChoice);
     showChoices(humanChoice, computerChoice);
 
     humanScoreParagraph.textContent = humanScore;
     computerScoreParagraph.textContent = computerScore;
 
+    if(humanScore === 5 || computerScore === 5){
+        gameOver(humanScore, computerScore);
+    }
+    
 }
 
 
@@ -104,9 +126,14 @@ const computerScoreParagraph = document.querySelector("#computerScoreText");
 const humanChoiceImg = document.querySelector("#humanChoiceImg");
 const computerChoiceImg = document.querySelector("#computerChoiceImg");
 
+const modal = document.querySelector("#modal");
+const btnModal = document.querySelector("#resetGame");
+const modalText = document.querySelector("#modalText");
+
 humanScoreParagraph.textContent = 0;
 computerScoreParagraph.textContent = 0;
 
 rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
+btnModal.addEventListener("click", resetGame);
